@@ -8,13 +8,15 @@ public class basics{
         st.push(58);
         st.push(67);
 
-        System.out.println(st.size());
+        System.out.println(st);
 
-        st.pop();
+        // System.out.println(st.size());
 
-        System.out.println(st.peek());
+        // st.pop();
 
-        st.pop();
+        // System.out.println(st.peek());
+
+        // st.pop();
 
         // System.out.println(st.peek());
 
