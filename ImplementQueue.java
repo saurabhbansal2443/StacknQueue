@@ -25,25 +25,23 @@ class myQueue {
         this.size = 0;
     }
 
-    myQueue(){
-         this.arr = new int[size];
+    myQueue() {
+        this.arr = new int[10];
         this.size = 10;
     }
 
     public void add(int ele) {
 
         if (this.size == arr.length) {
-           int[] narr= new int[arr.length*2];
+            int[] narr = new int[arr.length * 2];
 
+            for (int i = 0; i < arr.length; i++) {
+                narr[i] = arr[i];
+            }
 
-           for(int i=0;i<arr.length;i++){
-            narr[i]=arr[i];
-           }
-
-           arr=narr;
-           arr[size] = ele;
+            arr = narr;
+            arr[size] = ele;
             size++;
-
 
         } else {
 
