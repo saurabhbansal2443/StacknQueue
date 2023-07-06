@@ -1,9 +1,9 @@
 public class ImplementQueue {
     public static void main(String[] args) {
-        myQueue q=new myQueue(1);
+        myQueue q = new myQueue(1);
 
         q.add(1);
-       
+
         // q.add(2);
 
         // q.display();
@@ -11,9 +11,6 @@ public class ImplementQueue {
 
         q.remove();
         q.remove();
-         
-
-
 
     }
 
@@ -28,11 +25,26 @@ class myQueue {
         this.size = 0;
     }
 
+    myQueue(){
+         this.arr = new int[size];
+        this.size = 10;
+    }
+
     public void add(int ele) {
 
-        if (this.size == arr.length ) {
-            System.out.println("Queue is full");
-            return;
+        if (this.size == arr.length) {
+           int[] narr= new int[arr.length*2];
+
+
+           for(int i=0;i<arr.length;i++){
+            narr[i]=arr[i];
+           }
+
+           arr=narr;
+           arr[size] = ele;
+            size++;
+
+
         } else {
 
             arr[size] = ele;
