@@ -1,30 +1,63 @@
 public class normalStack {
     public static void main(String[] args) {
-        myStack2 st = new myStack2(5);
+        myStack st = new myStack();
 
         st.push(1);
         st.push(2);
-         
+        st.push(1);
+        // st.push(2);
+        // st.push(1);
+        // st.push(2);
+        // st.push(1);
+        // st.push(2);
+        // st.push(1);
+        // st.push(2);
+        // st.push(1);
+        // st.push(2);
 
-        int ele = st.peek();
+       
 
-        System.out.println(ele);
+    st.display();
+
+    System.out.println(st.size());
     }
 
 }
 
-class myStack2 {
+class myStack {
     int[] arr;
     int tos;
 
-    myStack2(int n) {
+    myStack(int n) {
         arr = new int[n];
         tos = -1;
     }
 
-    public void push(int ele) {
+    myStack(){   // this constrructor is for dynamic stack 
+        arr = new int[10];
+        tos = -1;
+    }
+
+    // public void push(int ele) {   // this is for normal stack 
+    //     if (tos == arr.length - 1) {
+    //         System.out.println("Stack is full");
+    //     } else {
+    //         tos++;
+    //         arr[tos] = ele;
+    //     }
+    // }
+
+    public void push(int ele) {  // this is for dynamic stack 
         if (tos == arr.length - 1) {
-            System.out.println("Stack is full");
+            int[] narr = new int[arr.length*2];
+
+            for(int i=0;i<arr.length;i++){
+                narr[i]=arr[i];
+            }
+              this.arr = narr;
+            tos++;
+            arr[tos] = ele;
+
         } else {
             tos++;
             arr[tos] = ele;
